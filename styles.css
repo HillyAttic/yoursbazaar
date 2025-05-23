@@ -1130,6 +1130,7 @@ footer {
         flex-direction: column;
         margin: 0;
         overflow: hidden;
+        border: 1px solid #eaeaea;
     }
     
     .product-image {
