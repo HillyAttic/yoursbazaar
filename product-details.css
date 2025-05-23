@@ -77,6 +77,7 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .thumbnail {
@@ -727,9 +728,23 @@
         align-items: center;
         text-align: center;
     }
+    
+    .tabs-nav {
+        justify-content: space-between;
+    }
+    
+    .tab-btn {
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 768px) {
+    .product-details {
+        padding: 20px 0 40px;
+    }
+
     .quantity-cart {
         flex-direction: column;
         align-items: flex-start;
@@ -763,9 +778,31 @@
     .original-price {
         font-size: 16px;
     }
+    
+    .main-image {
+        max-height: 350px;
+    }
+    
+    .main-image img {
+        object-fit: contain;
+    }
+    
+    .tabs-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+    }
+    
+    .tab-btn {
+        flex: 0 0 auto;
+    }
 }
 
 @media (max-width: 576px) {
+    .product-details {
+        padding: 15px 0 30px;
+    }
+
     .product-title {
         font-size: 20px;
     }
@@ -781,7 +818,13 @@
     }
     
     .image-thumbnails {
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+    
+    .thumbnail {
+        width: 60px;
+        height: 60px;
     }
     
     .product-actions {
@@ -792,12 +835,17 @@
     .wishlist-btn,
     .compare-btn {
         width: 100%;
+        padding: 10px 0;
+        text-align: center;
     }
     
     .tabs-nav {
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .tab-btn {
+        font-size: 13px;
+        padding: 10px 12px;
     }
     
     .review-form {
@@ -806,21 +854,31 @@
     
     .main-image {
         height: auto;
-    }
-    
-    .thumbnail {
-        width: 60px;
-        height: 60px;
+        max-height: 300px;
     }
     
     .product-variants {
         flex-wrap: wrap;
+    }
+    
+    /* Improve table display on mobile */
+    .specs-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .product-delivery {
+        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .breadcrumb {
         display: none;
+    }
+    
+    .product-details-grid {
+        gap: 20px;
     }
     
     .variant-group {
@@ -842,16 +900,17 @@
     }
     
     .tab-btn {
-        padding: 8px 12px;
-        font-size: 13px;
+        padding: 8px 10px;
+        font-size: 12px;
     }
     
     .tab-content {
-        padding: 15px;
+        padding: 15px 0;
     }
     
     .review {
         padding: 15px;
+        margin-bottom: 15px;
     }
     
     .review-header {
@@ -862,5 +921,27 @@
     
     .review-date {
         margin-top: 5px;
+    }
+    
+    .product-rating {
+        font-size: 13px;
+    }
+    
+    .review-title {
+        font-size: 15px;
+    }
+    
+    .review-content {
+        font-size: 13px;
+    }
+    
+    .main-image {
+        margin-bottom: 10px;
+        max-height: 250px;
+    }
+    
+    .share-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
     }
 } 
