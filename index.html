@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoursBazaar - Online Shopping</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="top-content">
+                    <div class="country-selector">
+                        <i class="fas fa-globe"></i>
+                        <span>Ship to: India</span>
+                    </div>
+                    <div class="customer-support">
+                        <a href="#"><i class="fas fa-headset"></i> Customer Support</a>
+                        <a href="#"><i class="fas fa-truck"></i> Track Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>yoursbazaar</h1>
+                        </a>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <form action="#" method="get">
+                            <input type="text" placeholder="Search products, brands and more...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <div class="action-item">
+                            <a href="#"><i class="fas fa-user"></i> Login</a>
+                        </div>
+                        <div class="action-item">
+                            <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+                        </div>
+                        <div class="action-item cart">
+                            <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-items">
+                    <li class="nav-item dropdown">
+                        <a href="#">All Categories <i class="fas fa-angle-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#">Electronics</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Home & Kitchen</a>
+                            <a href="#">Beauty & Personal Care</a>
+                            <a href="#">Books & Stationery</a>
+                            <a href="#">Sports & Outdoors</a>
+                            <a href="#">Toys & Games</a>
+                            <a href="#">Health & Wellness</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#">Today's Deals</a></li>
+                    <li class="nav-item"><a href="#">Best Sellers</a></li>
+                    <li class="nav-item"><a href="#">New Arrivals</a></li>
+                    <li class="nav-item"><a href="#">Customer Service</a></li>
+                    <li class="nav-item"><a href="#">Gift Cards</a></li>
+                    <li class="nav-item"><a href="#">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=500&q=80" alt="Special Offer">
+                <div class="slide-content">
+                    <h2>Summer Sale</h2>
+                    <p>Up to 50% off on selected items</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button class="prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Electronics">
+                    <h3>Electronics</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Fashion">
+                    <h3>Fashion</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Home & Kitchen">
+                    <h3>Home & Kitchen</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Beauty">
+                    <h3>Beauty</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1590710383731-3ea7ce8f078d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Toys">
+                    <h3>Toys</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Sports">
+                    <h3>Sports</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Trending Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Product 1">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Electronics</div>
+                        <h3 class="product-title">Wireless Bluetooth Headphones</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(45)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹3,499</span>
+                            <span class="original-price">₹5,999</span>
+                            <span class="discount-percentage">42% Off</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge best-seller">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Product 2">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Home & Kitchen</div>
+                        <h3 class="product-title">Smart Coffee Maker</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(128)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹8,999</span>
+                            <span class="original-price">₹12,999</span>
+                            <span class="discount-percentage">31% Off</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Product 3">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Fashion</div>
+                        <h3 class="product-title">Men's Casual Shirt</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(89)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,299</span>
+                            <span class="original-price">₹2,499</span>
+                            <span class="discount-percentage">48% Off</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">Sale</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Product 4">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Beauty</div>
+                        <h3 class="product-title">Premium Skincare Set</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(56)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹2,799</span>
+                            <span class="original-price">₹4,999</span>
+                            <span class="discount-percentage">44% Off</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="deals-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>Flash Sale</h2>
+                    <p>Grab your favorite products at unbelievable prices. Limited time offer!</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+                <div class="banner-timer">
+                    <div class="timer-unit">
+                        <span class="timer-value" id="days">02</span>
+                        <span class="timer-label">Days</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="hours">18</span>
+                        <span class="timer-label">Hours</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="minutes">45</span>
+                        <span class="timer-label">Mins</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="seconds">30</span>
+                        <span class="timer-label">Secs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-brands">
+        <div class="container">
+            <h2 class="section-title">Featured Brands</h2>
+            <div class="brand-slider">
+                <div class="brand-logo">
+                    <img src="https://images.unsplash.com/photo-1634973357973-f2ed2657db3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=80&q=80" alt="Brand 1">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://images.unsplash.com/photo-1649834489785-78c6673940ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=80&q=80" alt="Brand 2">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://images.unsplash.com/photo-1580974928064-f0aeef70895a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=80&q=80" alt="Brand 3">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://images.unsplash.com/photo-1664948724742-3c188d463f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=80&q=80" alt="Brand 4">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://images.unsplash.com/photo-1664575198308-3959904fa430?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=80&q=80" alt="Brand 5">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://images.unsplash.com/photo-1665491885338-6e76aaf3caa5?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=80&q=80" alt="Brand 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Free Shipping</h3>
+                        <p>On orders above ₹499</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Easy Returns</h3>
+                        <p>30-day return policy</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>24/7 Support</h3>
+                        <p>Customer support</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Secure Payment</h3>
+                        <p>100% secure checkout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>About yoursbazaar</h3>
+                        <p>yoursbazaar is your one-stop online shopping destination offering a wide range of products from global brands at competitive prices.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Customer Service</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping & Delivery</a></li>
+                            <li><a href="#">Returns & Exchanges</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>My Account</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">View Cart</a></li>
+                            <li><a href="#">My Wishlist</a></li>
+                            <li><a href="#">Track My Order</a></li>
+                            <li><a href="#">Orders & Returns</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email address">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>© 2023 yoursbazaar. All Rights Reserved.</p>
+                    <div class="payment-methods">
+                        <img src="https://images.unsplash.com/photo-1601567555835-54be41cd0b44?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=30&q=80" alt="Payment Methods">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
