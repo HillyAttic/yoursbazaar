@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded");
+    
     // Hero Slider Functionality
     initSlider();
     
@@ -8,8 +10,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize other interactive elements
     initProductHover();
     
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle - Initialize immediately
     initMobileMenu();
+    
+    // Add a direct click handler to mobile menu button as fallback
+    const menuBtn = document.getElementById('mobile-menu-open');
+    if (menuBtn) {
+        console.log("Adding direct click handler to menu button in document ready");
+        menuBtn.addEventListener('click', function(e) {
+            console.log("Direct menu button clicked");
+            e.preventDefault();
+            const nav = document.getElementById('mobile-nav');
+            const overlay = document.getElementById('mobile-nav-overlay');
+            if (nav) nav.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    } else {
+        console.warn("Mobile menu open button not found in document ready");
+    }
+    
+    // Add clickable class to all mobile menu buttons for jQuery-style handling
+    document.querySelectorAll('.mobile-menu-btn').forEach(btn => {
+        btn.classList.add('menu-clickable');
+    });
+    
+    // Add a document-wide click handler for mobile menu buttons
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.menu-clickable') || e.target.closest('.mobile-menu-btn')) {
+            console.log("Global click handler caught menu button click");
+            e.preventDefault();
+            const nav = document.getElementById('mobile-nav');
+            const overlay = document.getElementById('mobile-nav-overlay');
+            if (nav) nav.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
 });
 
 // Hero Slider
@@ -182,18 +219,19 @@ function initMobileMenu() {
     
     // Debug check
     console.log({
-        mobileMenuOpenBtn: mobileMenuOpenBtn,
-        mobileMenuCloseBtn: mobileMenuCloseBtn,
-        mobileNav: mobileNav,
-        mobileNavOverlay: mobileNavOverlay
+        mobileMenuOpenBtn: !!mobileMenuOpenBtn,
+        mobileMenuCloseBtn: !!mobileMenuCloseBtn,
+        mobileNav: !!mobileNav,
+        mobileNavOverlay: !!mobileNavOverlay
     });
     
-    // Add direct click handler on mobile menu open button
+    // Add super direct inline onclick attribute to ensure it works
     if (mobileMenuOpenBtn) {
-        console.log("Adding click handler to mobile menu button");
+        console.log("Adding multiple handlers to menu button");
         
+        // Method 1: onclick property
         mobileMenuOpenBtn.onclick = function(e) {
-            console.log("Mobile menu button clicked");
+            console.log("Mobile menu button clicked (onclick)");
             e.preventDefault();
             
             if (mobileNav) {
@@ -207,11 +245,54 @@ function initMobileMenu() {
             
             document.body.style.overflow = 'hidden';
         };
+        
+        // Method 2: addEventListener
+        mobileMenuOpenBtn.addEventListener('click', function(e) {
+            console.log("Mobile menu button clicked (addEventListener)");
+            e.preventDefault();
+            
+            if (mobileNav) {
+                mobileNav.classList.add('active');
+                console.log("Added active class to mobile nav (addEventListener)");
+            }
+            
+            if (mobileNavOverlay) {
+                mobileNavOverlay.classList.add('active');
+            }
+            
+            document.body.style.overflow = 'hidden';
+        });
+    } else {
+        console.warn("Mobile menu open button not found by ID");
+        
+        // Fallback: get all menu buttons by class
+        const menuButtons = document.querySelectorAll('.mobile-menu-btn');
+        console.log("Found", menuButtons.length, "mobile menu buttons by class");
+        
+        menuButtons.forEach((btn, index) => {
+            console.log("Adding handler to menu button", index);
+            btn.onclick = function(e) {
+                console.log("Mobile menu button clicked (class selector)", index);
+                e.preventDefault();
+                
+                if (mobileNav) {
+                    mobileNav.classList.add('active');
+                    console.log("Added active class to mobile nav (class selector)");
+                }
+                
+                if (mobileNavOverlay) {
+                    mobileNavOverlay.classList.add('active');
+                }
+                
+                document.body.style.overflow = 'hidden';
+            };
+        });
     }
     
     // Add click handler to close button
     if (mobileMenuCloseBtn) {
         mobileMenuCloseBtn.onclick = function(e) {
+            console.log("Close button clicked");
             e.preventDefault();
             closeMenu();
         };
@@ -278,31 +359,6 @@ function initMobileMenu() {
         }
         document.body.style.overflow = '';
     }
-    
-    // Add fallback click handler using a class selector (in case ID is missing)
-    const menuBtns = document.querySelectorAll('.mobile-menu-btn');
-    if (menuBtns.length > 0 && !mobileMenuOpenBtn) {
-        console.log("Using fallback selector for menu button");
-        menuBtns.forEach(btn => {
-            btn.onclick = function(e) {
-                console.log("Fallback menu button clicked");
-                e.preventDefault();
-                
-                const nav = document.querySelector('.mobile-nav');
-                const overlay = document.querySelector('.mobile-nav-overlay');
-                
-                if (nav) {
-                    nav.classList.add('active');
-                }
-                
-                if (overlay) {
-                    overlay.classList.add('active');
-                }
-                
-                document.body.style.overflow = 'hidden';
-            };
-        });
-    }
 }
 
 // Newsletter subscription
@@ -360,4 +416,26 @@ if (searchForm) {
             // searchInput.value = '';
         }
     });
+}
+
+// Global function for mobile menu button onclick attribute
+function openMobileMenu(event) {
+    console.log("openMobileMenu called from inline onclick");
+    event.preventDefault();
+    
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+    
+    if (mobileNav) {
+        mobileNav.classList.add('active');
+        console.log("Added active class to mobile nav from inline onclick");
+    } else {
+        console.error("Mobile nav element not found!");
+    }
+    
+    if (mobileNavOverlay) {
+        mobileNavOverlay.classList.add('active');
+    }
+    
+    document.body.style.overflow = 'hidden';
 } 

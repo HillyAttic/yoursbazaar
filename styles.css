@@ -201,16 +201,21 @@ header {
 
 /* Mobile Menu Button */
 .mobile-menu-btn {
-    display: none;
+    display: block;
     background: none;
     border: none;
     color: var(--text-color);
     font-size: 24px;
     cursor: pointer;
-    order: -1;
     padding: 5px;
     margin-right: 10px;
     z-index: 1001;
+}
+
+@media (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none;
+    }
 }
 
 /* Mobile menu styles */
