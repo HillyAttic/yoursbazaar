@@ -719,48 +719,65 @@
     }
     
     .reviews-summary {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
     .average-rating {
-        padding-right: 0;
-        padding-bottom: 20px;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
+        align-items: center;
+        text-align: center;
     }
 }
 
 @media (max-width: 768px) {
     .quantity-cart {
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
+        gap: 15px;
     }
     
     .quantity-selector {
         width: 100%;
-        max-width: 200px;
-        margin-bottom: 10px;
+        max-width: 150px;
+    }
+    
+    .add-to-cart-btn,
+    .buy-now-btn {
+        width: 100%;
+        margin-left: 0;
     }
     
     .tab-btn {
         padding: 10px 15px;
         font-size: 14px;
     }
+    
+    .product-title {
+        font-size: 24px;
+    }
+    
+    .current-price {
+        font-size: 22px;
+    }
+    
+    .original-price {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 576px) {
     .product-title {
-        font-size: 22px;
+        font-size: 20px;
     }
     
     .product-meta {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
     }
     
     .product-sku {
-        margin-top: 10px;
+        margin-top: 5px;
     }
     
     .image-thumbnails {
@@ -770,5 +787,80 @@
     .product-actions {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .wishlist-btn,
+    .compare-btn {
+        width: 100%;
+    }
+    
+    .tabs-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
+    
+    .review-form {
+        padding: 15px;
+    }
+    
+    .main-image {
+        height: auto;
+    }
+    
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .product-variants {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb {
+        display: none;
+    }
+    
+    .variant-group {
+        margin-bottom: 20px;
+    }
+    
+    .color-options {
+        justify-content: flex-start;
+    }
+    
+    .product-delivery {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .delivery-option {
+        margin-bottom: 0;
+    }
+    
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .tab-content {
+        padding: 15px;
+    }
+    
+    .review {
+        padding: 15px;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .review-date {
+        margin-top: 5px;
     }
 } 

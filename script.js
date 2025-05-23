@@ -172,32 +172,84 @@ function initProductHover() {
 
 // Mobile Menu Toggle
 function initMobileMenu() {
-    // Implementation will depend on mobile menu structure
-    // For now, let's add a basic responsive behavior
-    const windowWidth = window.innerWidth;
-    
-    // If on mobile, add click events to parent menu items
-    if (windowWidth < 768) {
-        const parentMenuItems = document.querySelectorAll('.nav-item.dropdown > a');
-        
-        parentMenuItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.nextElementSibling;
-                if (dropdown && dropdown.classList.contains('dropdown-content')) {
-                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                }
-            });
+    const mobileMenuOpenBtn = document.getElementById('mobile-menu-open');
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+    // Check if elements exist (on pages that have the mobile menu)
+    if (mobileMenuOpenBtn && mobileNav) {
+        // Open mobile menu
+        mobileMenuOpenBtn.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            mobileNavOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
+
+        // Close mobile menu
+        if (mobileMenuCloseBtn) {
+            mobileMenuCloseBtn.addEventListener('click', closeMenu);
+        }
+
+        // Close when clicking overlay
+        if (mobileNavOverlay) {
+            mobileNavOverlay.addEventListener('click', closeMenu);
+        }
+
+        // Toggle dropdown menus
+        if (mobileDropdownToggles) {
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    const dropdown = parent.querySelector('.mobile-dropdown-content');
+                    
+                    if (dropdown) {
+                        // Close all other dropdowns
+                        document.querySelectorAll('.mobile-dropdown-content').forEach(item => {
+                            if (item !== dropdown && item.style.display === 'block') {
+                                item.style.display = 'none';
+                                item.parentElement.querySelector('.mobile-dropdown-toggle i').classList.remove('fa-angle-up');
+                                item.parentElement.querySelector('.mobile-dropdown-toggle i').classList.add('fa-angle-down');
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        if (dropdown.style.display === 'block') {
+                            dropdown.style.display = 'none';
+                            this.querySelector('i').classList.remove('fa-angle-up');
+                            this.querySelector('i').classList.add('fa-angle-down');
+                        } else {
+                            dropdown.style.display = 'block';
+                            this.querySelector('i').classList.remove('fa-angle-down');
+                            this.querySelector('i').classList.add('fa-angle-up');
+                        }
+                    }
+                });
+            });
+        }
     }
-    
-    // Window resize handler
+
+    // Function to close mobile menu
+    function closeMenu() {
+        if (mobileNav) mobileNav.classList.remove('active');
+        if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Enable scrolling again
+    }
+
+    // Handle window resize
     window.addEventListener('resize', function() {
         const windowWidth = window.innerWidth;
-        const dropdowns = document.querySelectorAll('.dropdown-content');
         
         if (windowWidth >= 768) {
-            dropdowns.forEach(dropdown => {
+            // Reset mobile menu state on desktop view
+            if (mobileNav) mobileNav.classList.remove('active');
+            if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset any open dropdowns
+            document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
                 dropdown.style.display = '';
             });
         }
