@@ -1093,12 +1093,12 @@ footer {
     
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 10px;
     }
     
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 10px;
     }
     
     .timer-unit {
@@ -1118,109 +1118,142 @@ footer {
     
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 10px;
     }
     
     .product-card {
-        height: auto;
-        min-height: 420px;
+        height: 400px !important; /* Force exact height */
+        max-height: 400px !important;
+        min-height: 400px !important;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        margin: 0;
+        overflow: hidden;
     }
     
     .product-image {
-        height: 160px;
+        height: 160px !important; /* Fixed image height */
+        min-height: 160px !important;
+        max-height: 160px !important;
+        width: 100%;
+        overflow: hidden;
+        flex: 0 0 auto; /* Prevent image from flexing */
     }
     
     .product-info {
-        padding: 12px 10px;
-        flex: 1;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        height: 240px !important; /* Fixed info height */
+        max-height: 240px !important;
+        min-height: 240px !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .product-category {
+        font-size: 11px;
+        margin-bottom: 5px;
+        height: 15px;
+        overflow: hidden;
     }
     
     .product-title {
         font-size: 14px;
-        height: 40px;
-        margin-bottom: 8px;
+        height: 38px !important;
+        max-height: 38px !important;
+        min-height: 38px !important;
+        margin-bottom: 5px !important;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 1.2;
     }
     
     .product-rating {
         font-size: 12px;
-        height: 18px;
-        margin-bottom: 8px;
+        height: 20px !important;
+        max-height: 20px !important;
+        min-height: 20px !important;
+        margin-bottom: 5px !important;
+        overflow: hidden;
     }
     
     .product-price {
-        flex-wrap: wrap;
-        height: auto;
-        min-height: 40px;
-        margin-bottom: 10px;
+        font-size: 14px;
+        height: 47px !important;
+        max-height: 47px !important;
+        min-height: 47px !important;
+        margin-bottom: 10px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
     }
     
     .current-price {
         font-size: 15px;
+        margin-bottom: 3px;
+        margin-right: 0;
+        width: 100%;
+        font-weight: 600;
     }
     
     .original-price, .discount-percentage {
         font-size: 12px;
+        display: inline-block;
     }
     
     .add-to-cart-btn {
         padding: 8px 0;
         font-size: 14px;
+        height: 35px !important;
         margin-top: auto;
     }
 }
 
 @media (max-width: 576px) {
     .product-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
     
     .product-card {
-        height: auto;
-        min-height: 430px;
-        max-width: 320px;
+        height: 420px !important;
+        max-height: 420px !important;
+        min-height: 420px !important;
+        width: 100%;
+        max-width: 300px;
         margin: 0 auto;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
     
     .product-image {
-        height: 200px;
+        height: 180px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
     }
     
     .product-info {
-        padding: 15px;
+        height: 240px !important;
+        max-height: 240px !important;
+        min-height: 240px !important;
+        padding: 12px !important;
     }
     
     .product-title {
-        font-size: 16px;
-        height: 42px;
+        font-size: 15px;
+        height: 38px !important;
     }
     
     .product-price {
-        min-height: 45px;
-    }
-    
-    .current-price {
-        font-size: 16px;
-        display: block;
-        width: 100%;
-        margin-bottom: 5px;
-    }
-    
-    .original-price, .discount-percentage {
-        font-size: 13px;
-    }
-    
-    .product-rating {
-        font-size: 14px;
-        height: 20px;
+        height: 47px !important;
     }
     
     .add-to-cart-btn {
-        padding: 10px 0;
-        font-size: 15px;
+        height: 38px !important;
     }
     
     .category-grid {
