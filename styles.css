@@ -210,11 +210,12 @@ header {
     order: -1;
     padding: 5px;
     margin-right: 10px;
+    z-index: 1001;
 }
 
 /* Add mobile menu styles */
 .mobile-nav {
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -227,10 +228,12 @@ header {
     transition: transform 0.3s ease;
     overflow-y: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
 }
 
 .mobile-nav.active {
     transform: translateX(0);
+    visibility: visible;
 }
 
 .mobile-nav-header {
@@ -314,10 +317,13 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1999;
     backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .mobile-nav-overlay.active {
     display: block;
+    opacity: 1;
 }
 
 .main-nav {

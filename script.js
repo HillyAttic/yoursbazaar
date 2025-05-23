@@ -180,8 +180,12 @@ function initMobileMenu() {
 
     // Check if elements exist (on pages that have the mobile menu)
     if (mobileMenuOpenBtn && mobileNav) {
+        console.log("Mobile menu elements found");
+        
         // Open mobile menu
-        mobileMenuOpenBtn.addEventListener('click', function() {
+        mobileMenuOpenBtn.addEventListener('click', function(e) {
+            console.log("Mobile menu button clicked");
+            e.preventDefault();
             mobileNav.classList.add('active');
             mobileNavOverlay.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
@@ -229,6 +233,11 @@ function initMobileMenu() {
                 });
             });
         }
+    } else {
+        console.log("Mobile menu elements not found", {
+            mobileMenuOpenBtn: !!mobileMenuOpenBtn,
+            mobileNav: !!mobileNav
+        });
     }
 
     // Function to close mobile menu
