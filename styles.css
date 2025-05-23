@@ -516,7 +516,7 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 450px; /* Fixed height for all cards */
+    height: 450px; /* Fixed height for all product cards */
 }
 
 .product-card:hover {
